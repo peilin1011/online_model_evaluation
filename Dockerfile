@@ -1,5 +1,5 @@
 # 使用NVIDIA提供的基础镜像，它已经包含了CUDA和cuDNN，便于安装PyTorch
-FROM nvidia/cuda:11.3.1-cudnn8-runtime-ubuntu20.04
+FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu20.04
 
 # 设置环境变量以确保容器内的编码和路径
 ENV LANG=C.UTF-8
@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     git \
     python3 \
+    python3-dev \
+    build-essential \
     python3-pip \
     curl \
     && rm -rf /var/lib/apt/lists/*
